@@ -97,7 +97,7 @@ def spatial_pp(df_expr, df_pos, barcodes, save_dir, min_counts=101, min_cells=No
         # find overdispersed genes
         mat = pd.DataFrame(adata.X, index=adata.obs['spot'], columns=adata.var.index)
         df = find_overdispersed_genes(mat, gam_k=5, alpha=0.05, max_gene=max_gene_number)
-        data_index = np.nonzero(df['ods'] == 1)[0]
+        data_index = np.nonzero((df['ods'] == 1).values)[0]
         data_select = adata.X[:, data_index]
         col_name = np.array(adata.var.index[df['ods']])
     else:
