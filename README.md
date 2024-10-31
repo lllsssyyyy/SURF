@@ -14,5 +14,11 @@ barcodes: (n_spots,), a numpy array
 ‘last.pkl’: The saved trained model. 
 
 # Installation
+Before installation, make sure that R environment (https://cran.r-project.org/) and Pytorch (https://pytorch.org/) have been prepared.
+We have tested the installation process under ubuntu 22.04 and pytorch + cuda117.
+```
+conda create -n SpatialSURF python=3.9
+pip install spatialsurf
+```
 
 
