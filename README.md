@@ -17,7 +17,7 @@ barcodes: (n_spots,), a numpy array
 Before installation, make sure that R environment (https://cran.r-project.org/) and Pytorch (https://pytorch.org/) have been prepared.
 We have tested the installation process under ubuntu 22.04, R 4.4.1, and torch2.0.0+cuda117.
 ```
-conda create -n SpatialSURF python=3.9
+conda create -n SURF python=3.9
 pip install spatialsurf
 ```
 
