@@ -124,15 +124,15 @@ def deconvolution_multi_ctn(df_data, cell_type_num, spatial_mode, save_dir_name,
     for cell_type_num_i in cell_type_num:
         setup_seed(random_seed)
         print(f'\nCell type number = {cell_type_num_i}, begin deconvolution....')
-        os.makedirs("results_save/{}_{}/train_save/cell_type_num_{}".format(save_dir_name, begin_time, cell_type_num_i))
+        os.makedirs("results_save/{}_{}/model_save/cell_type_num_{}".format(save_dir_name, begin_time, cell_type_num_i))
         model = WTM(bow_dim=spatial_fea_num, n_topic=cell_type_num_i, device=device, dropout=0.5, alpha=alpha)
-        model.train(train_dataloader=train_dataloader, num_epochs=num_epoch, save_dir="results_save/{}_{}/train_save/cell_type_num_{}".format(save_dir_name, begin_time, cell_type_num_i), margin=margin)
+        model.train(train_dataloader=train_dataloader, num_epochs=num_epoch, save_dir="results_save/{}_{}/model_save/cell_type_num_{}".format(save_dir_name, begin_time, cell_type_num_i), margin=margin)
 
         embeds, recons = model.get_embed(dataloader=test_dataloader)
         top_gene_ids, top_gene_names, beta = model.get_topic_top_words(gene_names_list=df_expr.columns.tolist()[3:], top_k=5)
         rare_num, rare_cell_type = model.calc_rare_cell_type_num(embeds, thres=0.05)
         ppl = model.calc_perplexity(test_data, recons)
-        os.makedirs("results_save/{}_{}/test_save/cell_type_num_{}".format(save_dir_name, begin_time, cell_type_num_i))
+        os.makedirs("results_save/{}_{}/prediction_save/cell_type_num_{}".format(save_dir_name, begin_time, cell_type_num_i))
         dict_i = {'cell_type_num': cell_type_num_i, 'rare_cell_type_num': rare_num, 'ppl': ppl}
 
         parameter_adjustment.append(dict_i)
@@ -141,8 +141,8 @@ def deconvolution_multi_ctn(df_data, cell_type_num, spatial_mode, save_dir_name,
         save_dir = 'results_save/{}_{}/'.format(save_dir_name, begin_time)
         df.to_csv(save_dir + '{}.csv'.format(save_dir_name), index=False)
         df_pred = pd.DataFrame(embeds.squeeze())
-        df_pred.to_csv(save_dir + 'test_save/cell_type_num_{}/pred.csv'.format(cell_type_num_i), index=False)
+        df_pred.to_csv(save_dir + 'prediction_save/cell_type_num_{}/pred.csv'.format(cell_type_num_i), index=False)
         df_beta = pd.DataFrame(beta, columns=df_expr.columns[3:])
-        df_beta.to_csv(save_dir + 'test_save/cell_type_num_{}/beta.csv'.format(cell_type_num_i), index=False)
+        df_beta.to_csv(save_dir + 'prediction_save/cell_type_num_{}/beta.csv'.format(cell_type_num_i), index=False)
 
     return df

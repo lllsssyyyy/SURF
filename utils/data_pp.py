@@ -112,8 +112,6 @@ def spatial_pp(df_expr, df_pos, barcodes, save_dir, min_counts=101, min_cells=No
     df_pos_select.reset_index(drop=True, inplace=True)
     transcript_all = pd.concat([id, df_pos_select, expr], axis=1)
 
-    return transcript_all
-
     # remove spots without gene expressions
     drop_index = []
     for i in range(len(transcript_all)):
@@ -125,4 +123,5 @@ def spatial_pp(df_expr, df_pos, barcodes, save_dir, min_counts=101, min_cells=No
     transcript_all.to_csv(save_dir + '/spot_pos_and_expr.csv', index=False)
 
     print('\nData preprocessing end.')
+    return transcript_all
 
