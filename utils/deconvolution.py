@@ -66,7 +66,7 @@ def deconvolution(df_data, cell_type_num, spatial_mode, save_dir_name, pos_rate=
 
     print('\nDeconvolution begin...')
     model = WTM(bow_dim=spatial_fea_num, n_topic=cell_type_num, device=device, dropout=0.5, alpha=alpha)
-    train_save_dir = "results_save/{}_{}/train_save/".format(save_dir_name, begin_time)
+    train_save_dir = "results_save/{}_{}/model_save/".format(save_dir_name, begin_time)
     os.makedirs(train_save_dir)
     model.train(train_dataloader=train_dataloader, num_epochs=num_epoch, save_dir=train_save_dir, margin=margin)
     embeds, recon = model.get_embed(dataloader=test_dataloader)
@@ -79,7 +79,7 @@ def deconvolution(df_data, cell_type_num, spatial_mode, save_dir_name, pos_rate=
     df_beta = pd.DataFrame(beta, columns=spatial_gene_list, index=[f'X{i}' for i in range(embeds.shape[1])])
     df_beta = df_beta.reset_index()
 
-    save_dir = "results_save/{}_{}/test_save/".format(save_dir_name, begin_time)
+    save_dir = "results_save/{}_{}/prediction_save/".format(save_dir_name, begin_time)
     os.makedirs(save_dir)
     df_deconvolution_results.to_csv(save_dir + 'pred.csv', index=False)
     df_beta.to_csv(save_dir + 'beta.csv', index=False)
