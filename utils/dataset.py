@@ -198,35 +198,6 @@ def make_test_data_contrastive(df_expr):
     return test_data, spot_pos_all
 
 
-class train_Dataset(Data.Dataset):
-    def __init__(self, data):
-        self.data = data
-
-    def __getitem__(self, index):
-        spot = copy.deepcopy(self.data[index])
-        spot = torch.from_numpy(spot).float()
-        # patch_noise = add_noise(patch)
-
-        return spot
-
-    def __len__(self):
-        return len(self.data)
-
-
-class test_Dataset(Data.Dataset):
-    def __init__(self, data):
-        self.data = data
-
-    def __getitem__(self, index):
-        spot = copy.deepcopy(self.data[index])
-        spot = torch.from_numpy(spot).float()
-
-        return spot
-
-    def __len__(self):
-        return len(self.data)
-
-
 class train_Dataset_contrastive(Data.Dataset):
     def __init__(self, data):
         self.data = data
