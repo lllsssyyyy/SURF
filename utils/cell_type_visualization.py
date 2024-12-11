@@ -73,7 +73,7 @@ def visualize_lineplot(cell_type_num, index, rare_cell_type_num):
     fig, ax1 = plt.subplots(figsize=(3, 2))
     ax1.plot(cell_type_num, index, color='#416FB9')
     ax1.set_xlabel('K', fontname='Arial', fontsize=9)
-    ax1.set_ylabel('Pereplexity', color='#416FB9', fontsize=9)
+    ax1.set_ylabel('Representation discrepancy', color='#416FB9', fontsize=9)
     ax1.tick_params('y', colors='#416FB9')
     ax1.tick_params(axis='both', which='both', labelsize=6)
 
