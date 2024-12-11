@@ -131,7 +131,7 @@ def deconvolution_multi_ctn(df_data, cell_type_num, spatial_mode, save_dir_name,
         embeds, recons = model.get_embed(dataloader=test_dataloader)
         top_gene_ids, top_gene_names, beta = model.get_topic_top_words(gene_names_list=df_expr.columns.tolist()[3:], top_k=5)
         rare_num, rare_cell_type = model.calc_rare_cell_type_num(embeds, thres=0.05)
-        ppl = model.calc_perplexity(test_data, recons)
+        ppl = model.calc_RD(test_data, recons)
         os.makedirs("results_save/{}_{}/prediction_save/cell_type_num_{}".format(save_dir_name, begin_time, cell_type_num_i))
         dict_i = {'cell_type_num': cell_type_num_i, 'rare_cell_type_num': rare_num, 'ppl': ppl}
 
