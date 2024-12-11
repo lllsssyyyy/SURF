@@ -145,7 +145,7 @@ class WTM:
         return rare_num, rare_cell_type
 
 
-    def calc_perplexity(self, test_data, recon_data):  # test_data pp
+    def calc_RD(self, test_data, recon_data):  # test_data pp
         logsoftmax = torch.log_softmax(torch.from_numpy(recon_data), dim=1)
         J = -1.0 * torch.sum(torch.from_numpy(np.array(test_data)) * logsoftmax) / len(test_data)
 
