@@ -149,7 +149,7 @@ class WTM:
         logsoftmax = torch.log_softmax(torch.from_numpy(recon_data), dim=1)
         J = -1.0 * torch.sum(torch.from_numpy(np.array(test_data)) * logsoftmax) / len(test_data)
 
-        perplexity = math.exp(J)
-        return perplexity
+        RD = math.exp(J)
+        return RD
 
 
