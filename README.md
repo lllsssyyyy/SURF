@@ -17,7 +17,7 @@ We have tested the installation process under ubuntu 22.04, R 4.4.1, and torch2.
 conda create -n SURF python=3.9   
 conda activate SURF   
 ```
-3. Install Pytorch (https://pytorch.org/), please choose the suitable torch version according to your cuda version.
+3. Install Pytorch (https://pytorch.org/), **please choose the suitable torch version according to your cuda version**.
 ```
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113 
 ```
