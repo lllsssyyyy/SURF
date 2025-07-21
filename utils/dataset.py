@@ -5,8 +5,6 @@ import copy
 import torch.utils.data as Data
 import networkx as nx
 from networkx import from_numpy_array
-from torch_sparse import coalesce
-from torch_geometric.utils import remove_self_loops
 import torch
 from sklearn.metrics.pairwise import cosine_similarity
 import math

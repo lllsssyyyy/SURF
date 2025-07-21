@@ -3,7 +3,7 @@ import numpy as np
 import math
 
 
-def celltype_visualization_ST(pred_p, pos_all, col_num,plot=True):
+def celltype_visualization_ST(pred_p, pos_all, col_num):
     """
     pred_p: dataframe, spot * cell_type_num
     pos_all: dataframe, spot * 2
@@ -35,8 +35,7 @@ def celltype_visualization_ST(pred_p, pos_all, col_num,plot=True):
         ax[row_i, col_i].set_title(pred_p.columns[i], fontdict={'fontsize': 20, 'fontname': 'Arial'})
         ax[row_i, col_i].set_aspect(np.sqrt(3))
 
-    if plot:
-        plt.show()
+    plt.show()
 
 
 def celltype_visualization_visium(pred_p, pos_all, col_num):
