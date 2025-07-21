@@ -4,9 +4,9 @@ A self-supervised deep learning method for reference-free deconvolution. The ove
 ![Fig1](https://github.com/user-attachments/assets/45018ff0-2680-4ed5-9e09-3616b60f73cb)
 
 # Data input  
-df_expr: (dataframe), column names: gene names, shape: (n_spots, n_genes). The gene expression of ST data.  
-df_pos: (dataframe), column names: ‘x’, ‘y’, shape: (n_spots, 2). The position data of ST data.  
-barcodes: (list), len: n_spots. The barcodes of ST data.  
+**df_expr**: (dataframe), column names: gene names, shape: (n_spots, n_genes). The gene expression of ST data.  
+**df_pos**: (dataframe), column names: ‘x’, ‘y’, shape: (n_spots, 2). The position data of ST data.  
+**barcodes**: (list), len: n_spots. The barcodes of ST data.  
 
 # Installation
 Before installation, make sure that R environment (https://cran.r-project.org/) and Pytorch (https://pytorch.org/) have been prepared.
