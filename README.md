@@ -27,6 +27,6 @@ pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --e
 pip install spatialsurf
 ```
 # Tutorials
-[https://github.com/lllsssyyyy/SURF/tree/main/tutorials]
+https://github.com/lllsssyyyy/SURF/tree/main/tutorials
 
 
