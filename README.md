@@ -10,8 +10,9 @@ A self-supervised deep learning method for reference-free deconvolution. The ove
 
 # Installation
 We have tested the installation process under ubuntu 22.04, R 4.5.1, and torch 2.1.1 + cuda 12.1.
-1. Install R environment (https://cran.r-project.org/).Please install R packages such as clusterProfiler, mgcv, Matrix, msigdbr, CellChat, presto, etc. to ensure all functions in the code will work.
-2. Create the virtual environment
+1. Install R environment (https://cran.r-project.org/).
+   Please install R packages such as clusterProfiler, mgcv, Matrix, msigdbr, CellChat, presto, etc. to ensure all functions in the code will work.
+3. Create the virtual environment
 ```
 conda create -n SURF python=3.9   
 conda activate SURF   
