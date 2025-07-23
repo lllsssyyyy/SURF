@@ -9,7 +9,7 @@ A self-supervised deep learning method for reference-free deconvolution. The ove
 **barcodes**: (list), len: n_spots. The barcodes of ST data.  
 
 # Installation
-We have tested the installation process under ubuntu 22.04, R 3.6.3, and torch 1.11+cuda 11.2.
+We have tested the installation process under ubuntu 22.04, R 4.5.1, and torch 2.1.1 + cuda 12.1.
 1. Install R environment (https://cran.r-project.org/)
 2. Create the virtual environment
 ```
@@ -18,7 +18,7 @@ conda activate SURF
 ```
 3. Install Pytorch (https://pytorch.org/), **please choose the suitable torch version according to your cuda version**.
 ```
-pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113 
+pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu121 
 ```
 **Note**: The installation command shown above is suitable for our cuda version and is provided as an example only. Please refer to the instructions at [https://pytorch.org/get-started/previous-versions/] to find the installation command appropriate for your cuda version.
 
