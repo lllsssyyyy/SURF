@@ -1,5 +1,5 @@
 # SURF
-A self-supervised deep learning method for reference-free deconvolution. The overall approach is detailed in the official paper out in xxx.
+A self-supervised deep learning method for reference-free deconvolution. The overall approach is detailed in the official paper out in Advanced Science.
 
 ![Fig1](https://github.com/user-attachments/assets/45018ff0-2680-4ed5-9e09-3616b60f73cb)
 
